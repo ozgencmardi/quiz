@@ -69,6 +69,9 @@ function checkAnswer(e) {
     feedback.classList.add("correct");
     feedback.classList.remove("incorrect");
 
+    const correctSound = new Audio("assets/sfx/correct.wav");
+    correctSound.play();
+
     score++;
 
   } else {
@@ -76,6 +79,9 @@ function checkAnswer(e) {
     feedback.textContent = "Incorrect!";
     feedback.classList.add("incorrect");
     feedback.classList.remove("correct");
+
+    const incorrectSound = new Audio("assets/sfx/incorrect.wav");
+    incorrectSound.play();
 
     timer -= 10;
 
