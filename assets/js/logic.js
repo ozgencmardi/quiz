@@ -103,3 +103,26 @@ function endQuiz() {
 
   saveScore();
 }
+
+
+function saveScore() {
+
+  const initials = document.querySelector("#initials").value;
+
+  const newScore = {
+    initials: initials,
+    score: score
+  };
+
+  let scores = localStorage.getItem("scores");
+
+  if (scores === null) {
+    scores = [];
+  } else {
+    scores = JSON.parse(scores);
+  }
+
+  scores.push(newScore);
+
+  localStorage.setItem("scores", JSON.stringify(scores));
+}
