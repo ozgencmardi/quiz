@@ -110,16 +110,17 @@ function endQuiz() {
 
 
 function saveScore() {
-
   const initials = document.querySelector("#initials").value;
+
+  console.log(initials)
 
   const newScore = {
     initials: initials,
-    score: score
+    score: timer
   };
 
-
   let scores = localStorage.getItem("scores");
+  //let initials = localStorage.getItem("initials");
 
   if (scores === null) {
     scores = [];
@@ -128,11 +129,10 @@ function saveScore() {
   }
 
   scores.push(newScore);
-
   localStorage.setItem("scores", JSON.stringify(scores));
 }
 
-
+  let initials = localStorage.getItem("initials");
   let scores = localStorage.getItem("scores");
   let highscores = localStorage.getItem("highscores");
 
