@@ -55,3 +55,37 @@ function displayQuestion() {
     choices.appendChild(button);
   });
 }
+
+
+function checkAnswer(e) {
+
+  const button = e.target;
+
+  if (button.textContent === questions[currentQuestion].answer) {
+
+    feedback.textContent = "Correct!";
+    feedback.classList.add("correct");
+    feedback.classList.remove("incorrect");
+
+    score++;
+
+  } else {
+
+    feedback.textContent = "Incorrect!";
+    feedback.classList.add("incorrect");
+    feedback.classList.remove("correct");
+
+    timer -= 10;
+
+  }
+
+  feedback.style.display = "block";
+
+  currentQuestion++;
+
+  if (currentQuestion === questions.length) {
+    endQuiz();
+  } else {
+    setTimeout(displayQuestion, 1000);
+  }
+}
