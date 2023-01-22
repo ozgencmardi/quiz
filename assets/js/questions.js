@@ -20,7 +20,7 @@ const questions = [
     answer: "Finland"
   },
   {
-    question: "What is the highest-rated film on IMDb as of January 1st, 2022?",
+    question: "What is the highest-rated film on IMDb as of January 1st, 2023?",
     choices: [
       "The Dark Knight",
       "Titanic",
@@ -29,5 +29,4 @@ const questions = [
     ],
     answer: "The Shawshank Redemption"
   },
-  // Add more questions here
 ];
