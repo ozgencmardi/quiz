@@ -13,7 +13,6 @@ const finalScore = document.querySelector("#final-score");
 document.querySelector("#start").addEventListener("click", startQuiz);
 
 
-
 function startQuiz() {
 
   const startScreen = document.querySelector("#start-screen");
@@ -99,7 +98,7 @@ function endQuiz() {
   const endScreen = document.querySelector("#end-screen");
   endScreen.style.display = "block";
 
-  finalScore.textContent = score;
+  finalScore.textContent = timer;
 
   saveScore();
 }
@@ -109,10 +108,12 @@ function saveScore() {
 
   const initials = document.querySelector("#initials").value;
 
+
   const newScore = {
-    initials: initials,
-    score: score
+  initials: initials,
+  score: score
   };
+
 
   let scores = localStorage.getItem("scores");
 
@@ -126,3 +127,18 @@ function saveScore() {
 
   localStorage.setItem("scores", JSON.stringify(scores));
 }
+
+
+  let scores = localStorage.getItem("scores");
+  let highscores = localStorage.getItem("highscores");
+
+
+  if (scores === null) {
+    scores = [];
+  } else {
+    scores = JSON.parse(scores);
+  }
+
+  scores.push(score);
+
+  localStorage.setItem("scores", JSON.stringify(scores));
