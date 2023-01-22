@@ -1,4 +1,3 @@
-
 let currentQuestion = 0;
 let score = 0;
 let timer = 0;
@@ -16,7 +15,6 @@ document.querySelector("#start").addEventListener("click", startQuiz);
 
 
 function startQuiz() {
-  console.log("Start Quiz button clicked")
 
   const startScreen = document.querySelector("#start-screen");
   startScreen.style.display = "none";
@@ -88,4 +86,20 @@ function checkAnswer(e) {
   } else {
     setTimeout(displayQuestion, 1000);
   }
+}
+
+
+function endQuiz() {
+
+  clearInterval(intervalId);
+
+  const questions = document.querySelector("#questions");
+  questions.style.display = "none";
+
+  const endScreen = document.querySelector("#end-screen");
+  endScreen.style.display = "block";
+
+  finalScore.textContent = score;
+
+  saveScore();
 }
