@@ -42,3 +42,16 @@ function updateTimer() {
 }
 
 
+function displayQuestion() {
+  const current = questions[currentQuestion];
+
+  questionTitle.textContent = current.question;
+
+  choices.innerHTML = "";
+  current.choices.forEach(function(choice, i) {
+    const button = document.createElement("button");
+    button.textContent = choice;
+    button.addEventListener("click", checkAnswer);
+    choices.appendChild(button);
+  });
+}
