@@ -29,27 +29,32 @@ function startQuiz() {
 
 
 function updateTimer() {
+
   const time = document.querySelector("#time");
   time.textContent = timer;
 
   if (timer <= 0) {
     endQuiz();
   }
+
   timer--;
 }
 
 
 function displayQuestion() {
+
   const current = questions[currentQuestion];
 
   questionTitle.textContent = current.question;
 
   choices.innerHTML = "";
   current.choices.forEach(function(choice, i) {
+
     const button = document.createElement("button");
     button.textContent = choice;
     button.addEventListener("click", checkAnswer);
     choices.appendChild(button);
+
   });
 }
 
@@ -108,10 +113,9 @@ function saveScore() {
 
   const initials = document.querySelector("#initials").value;
 
-
   const newScore = {
-  initials: initials,
-  score: score
+    initials: initials,
+    score: score
   };
 
 
