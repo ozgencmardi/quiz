@@ -2,7 +2,7 @@
 
 ## Description
 
-Coding Quiz a game which is created by HTML, CSS and JavaScript. In this game, 3 questions are asked to the user and must be answered within 60 seconds. For each wrong answer, 10 seconds are deducted from the time as a penalty.
+Coding Quiz is a game created with HTML, CSS and JavaScript. In this game the user is asked 3 questions and must be answered within 60 seconds. 10 second penalty is deducted from the time for each wrong answer.
 
 ## Installation
 
