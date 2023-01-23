@@ -115,34 +115,6 @@ function endQuiz() {
   //saveScore();
 }
 
-/*
-function saveScore() {
-  let initials = initialElement.value.trim();
-  console.log(initials);
-
-  if (initials !== ""){
-      let highScores = JSON.parse(localStorage.getItem("highscores")) || [];
-      let newScore = {
-          score: time,
-          initials: initials
-      }
-      highScores.push(newScore);
-      localStorage.setItem("highscores", JSON.stringify(highScores));
-      window.location.href = "highscores.html";
-  }
-}
-
-function checkEnter(event) {
-  if(event.key === "Enter") {
-      saveScore();
-  }
-}
-
-submitBtn.addEventListener("click", saveScore);
-initialElement.addEventListener("keyup", checkEnter);
-
-*/
-
 
 function saveScore() {
   
