@@ -29,19 +29,6 @@ function startQuiz() {
 }
 
 
-function updateTimer() {
-
-  const time = document.querySelector("#time");
-  time.textContent = timer;
-
-  if (timer <= 0) {
-    endQuiz();
-  }
-
-  timer--;
-}
-
-
 function displayQuestion() {
 
   const current = questions[currentQuestion];
@@ -57,6 +44,19 @@ function displayQuestion() {
     choices.appendChild(button);
 
   });
+}
+
+
+function updateTimer() {
+
+  const time = document.querySelector("#time");
+  time.textContent = timer;
+
+  if (timer <= 0) {
+    endQuiz();
+  }
+
+  timer--;
 }
 
 
